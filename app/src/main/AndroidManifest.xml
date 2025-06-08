@@ -28,7 +28,7 @@
         <activity android:name=".SignInActivity" />
 
         <activity android:name=".SignUpActivity" />
-
+        <activity android:name=".NewsActivity" />
 
         <!-- (Optional) MainActivity if you're using it later -->
         <activity

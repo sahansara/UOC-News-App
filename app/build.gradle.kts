@@ -37,6 +37,9 @@ dependencies {
     // Firebase BOM - This ensures all Firebase libraries use compatible versions
     implementation(platform("com.google.firebase:firebase-bom:32.7.4"))
 
+    implementation("com.google.firebase:firebase-database:20.3.0")
+    implementation("androidx.cardview:cardview:1.0.0")
+
     // Firebase Libraries (versions managed by BOM)
     implementation("com.google.firebase:firebase-auth")
     implementation("com.google.firebase:firebase-database")

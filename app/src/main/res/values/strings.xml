@@ -1,38 +1,84 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">UOC Daily</string>
     <string name="logo_desc">App logo image</string>
     <string name="logo_description">UOC Logo</string>
     <string name="hint_username">Username</string>
     <string name="hint_password">Password</string>
     <string name="login">Login</string>
-    <string name="signup_prompt">Don’t have an account? Sign up</string>
+    <string name="signup_prompt" tools:ignore="StringEscaping"> Don't have an account? Sign up</string>
 
     <!-- sign up -->
+    <!-- Sign Up Activity Strings -->
+    <string name="signUp_username">Username</string>
+    <string name="signUp_Password">Password</string>
+    <string name="signUp_rePassword">Confirm Password</string>
+    <string name="signUp_Email">Email</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="login_prompt">Already have an account? Sign In</string>
 
+    <!-- Error Messages -->
+    <string name="error_username_required">Username is required</string>
+    <string name="error_email_required">Email is required</string>
+    <string name="error_password_required">Password is required</string>
+    <string name="error_password_length">Password must be at least 6 characters</string>
+    <string name="error_passwords_not_match">Passwords do not match</string>
 
+    <!-- Status Messages -->
+    <string name="creating_account">Creating Account…</string>
+    <string name="registration_failed">Registration failed</string>
+    <string name="account_created_success">Account created successfully!</string>
+    <string name="failed_save_user_data">Failed to save user data</string>
 
+    <!-- main news screen -->
+    <!-- News Screen Strings -->
+    <string name="news_screen_title">News Screen</string>
+    <string name="user_profile">User Profile</string>
 
-        <!-- Sign Up Activity Strings -->
-        <string name="signUp_username">Username</string>
-        <string name="signUp_Password">Password</string>
-        <string name="signUp_rePassword">Confirm Password</string>
-        <string name="signUp_Email">Email</string>
-        <string name="sign_up">Sign Up</string>
-        <string name="login_prompt">Already have an account? Sign In</string>
+    <!-- News Categories -->
+    <string name="category_academic">ACADEMIC</string>
+    <string name="category_faculty_events">FACULTY EVENTS</string>
+    <string name="category_sports">SPORTS</string>
 
+    <!-- Sample News Content -->
+    <string name="news_title_academic">Research Grants Awarded to Faculty</string>
+    <string name="news_desc_academic">New research grants have been awarded to faculty members across various departments.</string>
 
-        <!-- Error Messages -->
-        <string name="error_username_required">Username is required</string>
-        <string name="error_email_required">Email is required</string>
-        <string name="error_password_required">Password is required</string>
-        <string name="error_password_length">Password must be at least 6 characters</string>
-        <string name="error_passwords_not_match">Passwords do not match</string>
+    <string name="news_title_events">Annual Tech Conference Announced</string>
+    <string name="news_desc_events">The Faculty will host its annual tech conference next month, featuring keynote speakers.</string>
 
-        <!-- Status Messages -->
-        <string name="creating_account">Creating Account…</string>
-        <string name="registration_failed">Registration failed</string>
-        <string name="account_created_success">Account created successfully!</string>
-        <string name="failed_save_user_data">Failed to save user data</string>
+    <string name="news_title_sports">Lions Clinch Championship Victory</string>
+    <string name="news_desc_sports">The Lions secured the championship title with a decisive win in the final.</string>
 
+    <!-- Update Time -->
+    <string name="last_update">last update: just now</string>
+    <string name="last_update_format">last update: %s</string>
+
+    <!-- Navigation Menu -->
+    <string name="nav_home">Home</string>
+    <string name="nav_academic">Academic</string>
+    <string name="nav_events">Events</string>
+    <string name="nav_sports">Sports</string>
+    <string name="nav_dev_info">Dev Info</string>
+
+    <!-- Content Descriptions for Accessibility -->
+    <string name="cd_user_profile">User Profile</string>
+    <string name="cd_app_logo">App Logo</string>
+    <string name="cd_news_thumbnail">News Thumbnail</string>
+    <string name="cd_nav_home">Home</string>
+    <string name="cd_nav_academic">Academic</string>
+    <string name="cd_nav_events">Events</string>
+    <string name="cd_nav_sports">Sports</string>
+    <string name="cd_nav_dev_info">Developer Info</string>
+
+    <!-- Loading and Error States -->
+    <string name="loading_news">Loading news…</string>
+    <string name="error_loading_news">Failed to load news</string>
+    <string name="no_news_available">No news available</string>
+    <string name="retry">Retry</string>
+
+    <!-- News Actions -->
+    <string name="read_more">Read More</string>
+    <string name="share_news">Share</string>
+    <string name="bookmark_news">Bookmark</string>
 
 </resources>
