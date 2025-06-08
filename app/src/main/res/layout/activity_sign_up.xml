@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_layer">
+
+    <!-- Logo Section -->
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/logo"
+        android:contentDescription="@string/logo_description" />
+
+    <!-- Input Fields Container -->
+    <LinearLayout
+        android:id="@+id/inputContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logoImageView"
+        android:layout_marginTop="60dp"
+        android:orientation="vertical"
+        android:paddingHorizontal="40dp">
+
+        <!-- Username Input -->
+        <EditText
+            android:id="@+id/etUsername"
+            android:layout_width="320dp"
+            android:layout_height="65dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/rounded_input"
+            android:fontFamily="sans-serif"
+            android:textAlignment="center"
+            android:autofillHints="@string/signUp_username"
+            android:hint="@string/signUp_username"
+            android:textSize="22sp"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#B0FFFFFF"
+            android:paddingHorizontal="25dp"
+            android:paddingVertical="15dp"
+            android:inputType="text"
+            android:elevation="4dp"
+            android:textStyle="bold"
+            android:letterSpacing="0.05"
+            android:drawablePadding="12dp" />
+
+        <!-- Password Input -->
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="320dp"
+            android:layout_height="65dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/rounded_input"
+            android:fontFamily="sans-serif"
+            android:hint="@string/signUp_Password"
+            android:autofillHints="@string/signUp_Password"
+            android:textAlignment="center"
+            android:textSize="22sp"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#B0FFFFFF"
+            android:paddingHorizontal="25dp"
+            android:paddingVertical="15dp"
+            android:inputType="textPassword"
+            android:elevation="4dp"
+            android:textStyle="bold"
+            android:letterSpacing="0.05"
+            android:drawablePadding="12dp" />
+
+        <!-- Confirm Password Input -->
+        <EditText
+            android:id="@+id/etConfirmPassword"
+            android:layout_width="320dp"
+            android:layout_height="65dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/rounded_input"
+            android:fontFamily="sans-serif"
+            android:hint="@string/signUp_rePassword"
+            android:autofillHints="@string/signUp_rePassword"
+            android:textAlignment="center"
+            android:textSize="22sp"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#B0FFFFFF"
+            android:paddingHorizontal="25dp"
+            android:paddingVertical="15dp"
+            android:inputType="textPassword"
+            android:elevation="4dp"
+            android:textStyle="bold"
+            android:letterSpacing="0.05"
+            android:drawablePadding="12dp" />
+
+        <!-- Email Input -->
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="320dp"
+            android:layout_height="65dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/rounded_input"
+            android:fontFamily="sans-serif"
+            android:hint="@string/signUp_Email"
+            android:autofillHints="@string/signUp_Email"
+            android:textAlignment="center"
+            android:textSize="22sp"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#B0FFFFFF"
+            android:paddingHorizontal="25dp"
+            android:paddingVertical="15dp"
+            android:inputType="textEmailAddress"
+            android:elevation="4dp"
+            android:textStyle="bold"
+            android:letterSpacing="0.05"
+            android:drawablePadding="12dp" />
+
+    </LinearLayout>
+
+    <!-- Sign Up Button - Fixed height to 48dp minimum -->
+    <Button
+        android:id="@+id/btnSignUp"
+        android:layout_width="155dp"
+        android:layout_height="48dp"
+        android:layout_below="@id/inputContainer"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="sans-serif"
+        android:text="@string/sign_up"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <!-- Already have account text - Fixed with minimum touch target -->
+    <TextView
+        android:id="@+id/tvAlreadyHaveAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_below="@id/btnSignUp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/login_prompt"
+        android:textColor="#00FFFF"
+        android:textSize="16sp"
+        android:fontFamily="sans-serif"
+        android:clickable="true"
+        android:focusable="true"
+        android:textStyle="bold"
+        android:background="?android:attr/selectableItemBackground"
+        android:gravity="center"
+        android:paddingHorizontal="16dp" /></RelativeLayout>

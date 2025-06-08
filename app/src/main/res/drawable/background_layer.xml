@@ -1,0 +1,13 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background color -->
+    <item>
+        <color android:color="#CC8A8EFF" /> <!-- 80% opacity -->
+    </item>
+
+    <!-- Background image -->
+    <item>
+        <bitmap
+            android:src="@drawable/bg"
+            android:gravity="center" />
+    </item>
+</layer-list>

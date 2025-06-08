@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">UOC Daily</string>
+    <string name="logo_desc">App logo image</string>
+    <string name="logo_description">UOC Logo</string>
+    <string name="hint_username">Username</string>
+    <string name="hint_password">Password</string>
+    <string name="login">Login</string>
+    <string name="signup_prompt">Don’t have an account? Sign up</string>
+
+    <!-- sign up -->
+
+
+
+
+        <!-- Sign Up Activity Strings -->
+        <string name="signUp_username">Username</string>
+        <string name="signUp_Password">Password</string>
+        <string name="signUp_rePassword">Confirm Password</string>
+        <string name="signUp_Email">Email</string>
+        <string name="sign_up">Sign Up</string>
+        <string name="login_prompt">Already have an account? Sign In</string>
+
+
+        <!-- Error Messages -->
+        <string name="error_username_required">Username is required</string>
+        <string name="error_email_required">Email is required</string>
+        <string name="error_password_required">Password is required</string>
+        <string name="error_password_length">Password must be at least 6 characters</string>
+        <string name="error_passwords_not_match">Passwords do not match</string>
+
+        <!-- Status Messages -->
+        <string name="creating_account">Creating Account…</string>
+        <string name="registration_failed">Registration failed</string>
+        <string name="account_created_success">Account created successfully!</string>
+        <string name="failed_save_user_data">Failed to save user data</string>
+
+
+</resources>
