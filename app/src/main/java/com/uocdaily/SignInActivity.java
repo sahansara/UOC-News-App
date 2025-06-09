@@ -13,6 +13,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.FirebaseAuthException;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseAuthInvalidUserException;
 
 public class SignInActivity extends AppCompatActivity {
 
@@ -28,8 +31,12 @@ public class SignInActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
 
-        // Initialize Firebase Auth
+        // Initialize Firebase Auth with debug logging
         mAuth = FirebaseAuth.getInstance();
+
+        // Debug: Check Firebase connection
+        Log.d(TAG, "Firebase Auth instance: " + (mAuth != null ? "OK" : "NULL"));
+        Log.d(TAG, "Current user: " + (mAuth.getCurrentUser() != null ? mAuth.getCurrentUser().getEmail() : "None"));
 
         // Initialize UI components
         initializeViews();
@@ -44,8 +51,11 @@ public class SignInActivity extends AppCompatActivity {
         // Check if user is already signed in
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null) {
+            Log.d(TAG, "User already signed in: " + currentUser.getEmail());
             // User is already signed in, navigate to main activity
-            navigateToMainActivity();
+//            navigateNewsActivity();
+        } else {
+            Log.d(TAG, "No user currently signed in");
         }
     }
 
@@ -88,12 +98,16 @@ public class SignInActivity extends AppCompatActivity {
     }
 
     /**
-     * Handle user login
+     * Handle user login with enhanced debugging
      */
     private void loginUser() {
         try {
             String email = editTextEmail.getText().toString().trim();
             String password = editTextPassword.getText().toString().trim();
+
+            // Debug logging
+            Log.d(TAG, "Attempting login for email: " + email);
+            Log.d(TAG, "Password length: " + password.length());
 
             // Validate input
             if (!validateInput(email, password)) {
@@ -104,16 +118,54 @@ public class SignInActivity extends AppCompatActivity {
             setLoadingState(true);
 
             // Authenticate with Firebase
+            Log.d(TAG, "Starting Firebase authentication...");
             mAuth.signInWithEmailAndPassword(email, password)
                     .addOnSuccessListener(authResult -> {
                         Log.d(TAG, "Login successful for user: " + email);
+                        Log.d(TAG, "Auth result: " + authResult.getUser().getUid());
                         showSuccessToast("Login Successful");
-                        navigateToMainActivity();
+                        setLoadingState(false);
+                        navigateNewsActivity();
                     })
                     .addOnFailureListener(e -> {
                         Log.e(TAG, "Login failed: " + e.getMessage(), e);
-                        showErrorToast("Login Failed: " + e.getMessage());
+
+                        // Enhanced error handling with specific error codes
+                        String errorMessage = "Login failed";
+
+                        if (e instanceof FirebaseAuthInvalidCredentialsException) {
+                            errorMessage = "Invalid email or password";
+                            Log.e(TAG, "Invalid credentials error");
+                        } else if (e instanceof FirebaseAuthInvalidUserException) {
+                            FirebaseAuthInvalidUserException invalidUserException = (FirebaseAuthInvalidUserException) e;
+                            String errorCode = invalidUserException.getErrorCode();
+                            Log.e(TAG, "Invalid user error code: " + errorCode);
+
+                            switch (errorCode) {
+                                case "ERROR_USER_NOT_FOUND":
+                                    errorMessage = "No account found with this email";
+                                    break;
+                                case "ERROR_USER_DISABLED":
+                                    errorMessage = "This account has been disabled";
+                                    break;
+                                default:
+                                    errorMessage = "User account error: " + errorCode;
+                            }
+                        } else if (e instanceof FirebaseAuthException) {
+                            FirebaseAuthException authException = (FirebaseAuthException) e;
+                            String errorCode = authException.getErrorCode();
+                            Log.e(TAG, "Firebase auth error code: " + errorCode);
+                            errorMessage = "Authentication error: " + errorCode;
+                        }
+
+                        showErrorToast(errorMessage);
                         setLoadingState(false);
+                    })
+                    .addOnCompleteListener(task -> {
+                        Log.d(TAG, "Authentication task completed. Success: " + task.isSuccessful());
+                        if (!task.isSuccessful() && task.getException() != null) {
+                            Log.e(TAG, "Task exception: " + task.getException().getClass().getSimpleName());
+                        }
                     });
 
         } catch (Exception e) {
@@ -130,36 +182,41 @@ public class SignInActivity extends AppCompatActivity {
         if (TextUtils.isEmpty(email)) {
             editTextEmail.setError("Email is required");
             editTextEmail.requestFocus();
+            Log.d(TAG, "Validation failed: Email is empty");
             return false;
         }
 
         if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             editTextEmail.setError("Please enter a valid email");
             editTextEmail.requestFocus();
+            Log.d(TAG, "Validation failed: Invalid email format");
             return false;
         }
 
         if (TextUtils.isEmpty(password)) {
             editTextPassword.setError("Password is required");
             editTextPassword.requestFocus();
+            Log.d(TAG, "Validation failed: Password is empty");
             return false;
         }
 
         if (password.length() < 6) {
             editTextPassword.setError("Password must be at least 6 characters");
             editTextPassword.requestFocus();
+            Log.d(TAG, "Validation failed: Password too short");
             return false;
         }
 
+        Log.d(TAG, "Input validation passed");
         return true;
     }
 
     /**
      * Navigate to main activity after successful login
      */
-    private void navigateToMainActivity() {
+    private void navigateNewsActivity() {
         try {
-            Intent intent = new Intent(SignInActivity.this, MainActivity.class);
+            Intent intent = new Intent(SignInActivity.this, NewsActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
             finish();
@@ -215,7 +272,8 @@ public class SignInActivity extends AppCompatActivity {
     private void showErrorToast(String message) {
         try {
             runOnUiThread(() -> {
-                Toast.makeText(this, "Error: " + message, Toast.LENGTH_LONG).show();
+                Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+                Log.d(TAG, "Error toast shown: " + message);
             });
         } catch (Exception e) {
             Log.e(TAG, "Error showing error toast: " + e.getMessage(), e);
@@ -229,6 +287,7 @@ public class SignInActivity extends AppCompatActivity {
         try {
             runOnUiThread(() -> {
                 Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+                Log.d(TAG, "Success toast shown: " + message);
             });
         } catch (Exception e) {
             Log.e(TAG, "Error showing success toast: " + e.getMessage(), e);

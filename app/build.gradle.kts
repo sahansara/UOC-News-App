@@ -31,31 +31,39 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
+    // Add this to handle potential resource conflicts
+    packagingOptions {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        }
+    }
 }
 
 dependencies {
     // Firebase BOM - This ensures all Firebase libraries use compatible versions
-    implementation(platform("com.google.firebase:firebase-bom:32.7.4"))
+    implementation(platform("com.google.firebase:firebase-bom:33.1.2"))
 
-    implementation("com.google.firebase:firebase-database:20.3.0")
-    implementation("androidx.cardview:cardview:1.0.0")
-
-    // Firebase Libraries (versions managed by BOM)
+    // Firebase Libraries (versions managed by BOM) - REMOVE duplicate entries
     implementation("com.google.firebase:firebase-auth")
     implementation("com.google.firebase:firebase-database")
-    implementation("com.google.firebase:firebase-analytics") // Optional but recommended
+    implementation("com.google.firebase:firebase-analytics")
 
-    // Google Play Services (sometimes needed for Firebase Auth)
-    implementation("com.google.android.gms:play-services-auth:20.7.0")
+    // Google Play Services
+    implementation("com.google.android.gms:play-services-auth:21.2.0")
 
-    // AndroidX Libraries
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.10.0")
-    implementation("androidx.activity:activity:1.8.1")
+    // AndroidX Libraries - Updated versions
+    implementation("androidx.appcompat:appcompat:1.7.0")
+    implementation("com.google.android.material:material:1.12.0")
+    implementation("androidx.activity:activity:1.9.1")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation("androidx.cardview:cardview:1.0.0")
+
+    implementation ("com.github.bumptech.glide:glide:4.15.1")
+
 
     // Testing
     testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    androidTestImplementation("androidx.test.ext:junit:1.2.1")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
 }

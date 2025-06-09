@@ -1,11 +1,10 @@
 package com.uocdaily;
 
-
 import android.os.Bundle;
 import android.util.Log;
-
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -20,7 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 public class NewsActivity extends AppCompatActivity {
 
     // Constants for logging and error handling
-    private static final String TAG = "MainActivity";
+    private static final String TAG = "NewsActivity";
     private static final String FIREBASE_NEWS_PATH = "news";
 
     // UI Components
@@ -29,6 +28,12 @@ public class NewsActivity extends AppCompatActivity {
 
     // Navigation components
     private LinearLayout navHome, navAcademic, navEvents, navSports, navDevInfo;
+
+    // News card UI elements
+    private ImageView academicNewsImage, eventsNewsImage, sportsNewsImage;
+    private TextView academicNewsTitle, academicNewsDescription, academicNewsLastUpdate;
+    private TextView eventsNewsTitle, eventsNewsDescription, eventsNewsLastUpdate;
+    private TextView sportsNewsTitle, sportsNewsDescription, sportsNewsLastUpdate;
 
     // Firebase Database reference
     private DatabaseReference databaseReference;
@@ -89,6 +94,29 @@ public class NewsActivity extends AppCompatActivity {
             navEvents = findViewById(R.id.navEvents);
             navSports = findViewById(R.id.navSports);
             navDevInfo = findViewById(R.id.navDevInfo);
+
+            // Academic news card elements
+            academicNewsImage = findViewById(R.id.academicNewsImage);
+            academicNewsTitle = findViewById(R.id.academicNewsTitle);
+            academicNewsDescription = findViewById(R.id.academicNewsDescription);
+            academicNewsLastUpdate = findViewById(R.id.academicNewsLastUpdate);
+
+            // Events news card elements
+            eventsNewsImage = findViewById(R.id.eventsNewsImage);
+            eventsNewsTitle = findViewById(R.id.eventsNewsTitle);
+            eventsNewsDescription = findViewById(R.id.eventsNewsDescription);
+            eventsNewsLastUpdate = findViewById(R.id.eventsNewsLastUpdate);
+
+            // Sports news card elements
+            sportsNewsImage = findViewById(R.id.sportsNewsImage);
+            sportsNewsTitle = findViewById(R.id.sportsNewsTitle);
+            sportsNewsDescription = findViewById(R.id.sportsNewsDescription);
+            sportsNewsLastUpdate = findViewById(R.id.sportsNewsLastUpdate);
+
+            // Check if critical elements are found
+            if (academicNewsTitle == null || eventsNewsTitle == null || sportsNewsTitle == null) {
+                Log.w(TAG, "Some news card elements not found in layout");
+            }
 
             Log.d(TAG, "Views initialized successfully");
 
@@ -241,7 +269,6 @@ public class NewsActivity extends AppCompatActivity {
             String imageUrl = academicData.child("imageUrl").getValue(String.class);
             String lastUpdate = academicData.child("lastUpdate").getValue(String.class);
 
-            // TODO: Implement UI update logic when card views are added to layout
             updateCardContent("academic", title, description, imageUrl, lastUpdate);
 
             Log.d(TAG, "Academic card updated: " + title);
@@ -261,7 +288,6 @@ public class NewsActivity extends AppCompatActivity {
             String imageUrl = eventsData.child("imageUrl").getValue(String.class);
             String lastUpdate = eventsData.child("lastUpdate").getValue(String.class);
 
-            // TODO: Implement UI update logic when card views are added to layout
             updateCardContent("events", title, description, imageUrl, lastUpdate);
 
             Log.d(TAG, "Events card updated: " + title);
@@ -281,7 +307,6 @@ public class NewsActivity extends AppCompatActivity {
             String imageUrl = sportsData.child("imageUrl").getValue(String.class);
             String lastUpdate = sportsData.child("lastUpdate").getValue(String.class);
 
-            // TODO: Implement UI update logic when card views are added to layout
             updateCardContent("sports", title, description, imageUrl, lastUpdate);
 
             Log.d(TAG, "Sports card updated: " + title);
@@ -293,12 +318,70 @@ public class NewsActivity extends AppCompatActivity {
 
     /**
      * Generic method to update card content
-     * TODO: Implement this method when UI cards are added to the layout
      */
     private void updateCardContent(String cardType, String title, String description, String imageUrl, String lastUpdate) {
-        // This method will be implemented when you add the actual card views to your layout
-        // For now, just log the information
-        Log.d(TAG, String.format("Updating %s card - Title: %s, Description: %s", cardType, title, description));
+        try {
+            runOnUiThread(() -> {
+                switch (cardType) {
+                    case "academic":
+                        if (academicNewsTitle != null && title != null) {
+                            academicNewsTitle.setText(title);
+                        }
+                        if (academicNewsDescription != null && description != null) {
+                            academicNewsDescription.setText(description);
+                        }
+                        if (academicNewsLastUpdate != null && lastUpdate != null) {
+                            academicNewsLastUpdate.setText(lastUpdate);
+                        }
+                        // TODO: Load image from imageUrl using Glide or Picasso
+                        // if (academicNewsImage != null && imageUrl != null) {
+                        //     Glide.with(this).load(imageUrl).into(academicNewsImage);
+                        // }
+                        break;
+
+                    case "events":
+                        if (eventsNewsTitle != null && title != null) {
+                            eventsNewsTitle.setText(title);
+                        }
+                        if (eventsNewsDescription != null && description != null) {
+                            eventsNewsDescription.setText(description);
+                        }
+                        if (eventsNewsLastUpdate != null && lastUpdate != null) {
+                            eventsNewsLastUpdate.setText(lastUpdate);
+                        }
+                        // TODO: Load image from imageUrl using Glide or Picasso
+                        // if (eventsNewsImage != null && imageUrl != null) {
+                        //     Glide.with(this).load(imageUrl).into(eventsNewsImage);
+                        // }
+                        break;
+
+                    case "sports":
+                        if (sportsNewsTitle != null && title != null) {
+                            sportsNewsTitle.setText(title);
+                        }
+                        if (sportsNewsDescription != null && description != null) {
+                            sportsNewsDescription.setText(description);
+                        }
+                        if (sportsNewsLastUpdate != null && lastUpdate != null) {
+                            sportsNewsLastUpdate.setText(lastUpdate);
+                        }
+                        // TODO: Load image from imageUrl using Glide or Picasso
+                        // if (sportsNewsImage != null && imageUrl != null) {
+                        //     Glide.with(this).load(imageUrl).into(sportsNewsImage);
+                        // }
+                        break;
+
+                    default:
+                        Log.w(TAG, "Unknown card type: " + cardType);
+                        break;
+                }
+            });
+
+            Log.d(TAG, String.format("Updated %s card - Title: %s, Description: %s", cardType, title, description));
+
+        } catch (Exception e) {
+            Log.e(TAG, "Error updating " + cardType + " card content: " + e.getMessage(), e);
+        }
     }
 
     /**

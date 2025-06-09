@@ -80,6 +80,7 @@
 
             <!-- Academic News Card -->
             <androidx.cardview.widget.CardView
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
@@ -97,6 +98,7 @@
 
                     <!-- News Thumbnail -->
                     <ImageView
+                        android:id="@+id/academicNewsImage"
                         android:layout_width="120dp"
                         android:layout_height="90dp"
                         android:src="@drawable/ic_home"
@@ -129,6 +131,7 @@
 
                         <!-- News Title -->
                         <TextView
+                            android:id="@+id/academicNewsTitle"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/news_title_academic"
@@ -142,6 +145,7 @@
 
                         <!-- News Description -->
                         <TextView
+                            android:id="@+id/academicNewsDescription"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/news_desc_academic"
@@ -154,6 +158,7 @@
 
                         <!-- Last Update Time -->
                         <TextView
+                            android:id="@+id/academicNewsLastUpdate"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/last_update"
@@ -187,6 +192,7 @@
 
                     <!-- News Thumbnail -->
                     <ImageView
+                        android:id="@+id/eventsNewsImage"
                         android:layout_width="120dp"
                         android:layout_height="90dp"
                         android:src="@drawable/ic_event"
@@ -219,6 +225,7 @@
 
                         <!-- News Title -->
                         <TextView
+                            android:id="@+id/eventsNewsTitle"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/news_title_events"
@@ -232,6 +239,7 @@
 
                         <!-- News Description -->
                         <TextView
+                            android:id="@+id/eventsNewsDescription"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/news_desc_events"
@@ -244,6 +252,7 @@
 
                         <!-- Last Update Time -->
                         <TextView
+                            android:id="@+id/eventsNewsLastUpdate"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/last_update"
@@ -277,6 +286,7 @@
 
                     <!-- News Thumbnail -->
                     <ImageView
+                        android:id="@+id/sportsNewsImage"
                         android:layout_width="120dp"
                         android:layout_height="90dp"
                         android:src="@drawable/ic_sports"
@@ -309,6 +319,7 @@
 
                         <!-- News Title -->
                         <TextView
+                            android:id="@+id/sportsNewsTitle"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/news_title_sports"
@@ -322,6 +333,7 @@
 
                         <!-- News Description -->
                         <TextView
+                            android:id="@+id/sportsNewsDescription"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/news_desc_sports"
@@ -334,6 +346,7 @@
 
                         <!-- Last Update Time -->
                         <TextView
+                            android:id="@+id/sportsNewsLastUpdate"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/last_update"
