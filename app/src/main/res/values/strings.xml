@@ -82,4 +82,40 @@
     <string name="bookmark_news">Bookmark</string>
     <string name="bookmark">Bookmark</string>
 
+
+        <!-- Profile Page Strings -->
+        <string name="my_profile">My Profile</string>
+        <string name="edit_info">Edit info</string>
+        <string name="sign_out">Sign Out</string>
+        <string name="back_button">Back</string>
+        <string name="default_username">shantha</string>
+        <string name="default_email">shantha@gmail.com</string>
+
+    <!-- Edit Profile Page Strings -->
+    <string name="edit_profile">Edit Profile</string>
+    <string name="edit_profile_title">Edit Profile</string>
+    <string name="username_label">Username</string>
+    <string name="email_label">Email</string>
+    <string name="hint_enter_username">Enter your username</string>
+    <string name="hint_enter_email">Enter your email</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="change_profile_picture">Change Profile Picture</string>
+    <string name="profile_image">Profile Image</string>
+
+    <!-- Edit Profile Messages -->
+    <string name="saving_changes">Saving changes…</string>
+    <string name="profile_updated_success">Profile updated successfully!</string>
+    <string name="profile_update_failed">Failed to update profile</string>
+    <string name="error_invalid_email">Please enter a valid email address</string>
+    <string name="error_username_empty">Username cannot be empty</string>
+    <string name="error_email_empty">Email cannot be empty</string>
+
+    <!-- Content Descriptions for Edit Profile -->
+    <string name="cd_back_button">Back</string>
+    <string name="cd_profile_image">Profile Image</string>
+    <string name="cd_camera_icon">Change Profile Picture</string>
+    <string name="cd_cancel_button">Cancel</string>
+    <string name="cd_save_button">Save</string>
+
 </resources>
