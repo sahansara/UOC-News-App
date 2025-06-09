@@ -15,6 +15,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.bumptech.glide.Glide;
+import android.content.Intent;
 
 public class NewsActivity extends AppCompatActivity {
 
@@ -333,10 +335,14 @@ public class NewsActivity extends AppCompatActivity {
                         if (academicNewsLastUpdate != null && lastUpdate != null) {
                             academicNewsLastUpdate.setText(lastUpdate);
                         }
-                        // TODO: Load image from imageUrl using Glide or Picasso
-                        // if (academicNewsImage != null && imageUrl != null) {
-                        //     Glide.with(this).load(imageUrl).into(academicNewsImage);
-                        // }
+                          // TODO: Load image from imageUrl using Glide or Picasso
+                        if (academicNewsImage != null && imageUrl != null && !imageUrl.isEmpty()) {
+                            Glide.with(this)
+                                    .load(imageUrl)
+                                    .placeholder(R.drawable.ic_launcher_background) // Default placeholder
+                                    .error(R.drawable.ic_launcher_background) // Error placeholder
+                                    .into(academicNewsImage);
+                        }
                         break;
 
                     case "events":
@@ -350,9 +356,13 @@ public class NewsActivity extends AppCompatActivity {
                             eventsNewsLastUpdate.setText(lastUpdate);
                         }
                         // TODO: Load image from imageUrl using Glide or Picasso
-                        // if (eventsNewsImage != null && imageUrl != null) {
-                        //     Glide.with(this).load(imageUrl).into(eventsNewsImage);
-                        // }
+                        if (eventsNewsImage != null && imageUrl != null && !imageUrl.isEmpty()) {
+                            Glide.with(this)
+                                    .load(imageUrl)
+                                    .placeholder(R.drawable.ic_launcher_background)
+                                    .error(R.drawable.ic_launcher_background)
+                                    .into(eventsNewsImage);
+                        }
                         break;
 
                     case "sports":
@@ -366,9 +376,13 @@ public class NewsActivity extends AppCompatActivity {
                             sportsNewsLastUpdate.setText(lastUpdate);
                         }
                         // TODO: Load image from imageUrl using Glide or Picasso
-                        // if (sportsNewsImage != null && imageUrl != null) {
-                        //     Glide.with(this).load(imageUrl).into(sportsNewsImage);
-                        // }
+                        if (sportsNewsImage != null && imageUrl != null && !imageUrl.isEmpty()) {
+                            Glide.with(this)
+                                    .load(imageUrl)
+                                    .placeholder(R.drawable.ic_launcher_background)
+                                    .error(R.drawable.ic_launcher_background)
+                                    .into(sportsNewsImage);
+                        }
                         break;
 
                     default:
@@ -377,7 +391,7 @@ public class NewsActivity extends AppCompatActivity {
                 }
             });
 
-            Log.d(TAG, String.format("Updated %s card - Title: %s, Description: %s", cardType, title, description));
+            Log.d(TAG, String.format("Updated %s card - Title: %s, Description: %s , image url : %s ", cardType, title, description, imageUrl));
 
         } catch (Exception e) {
             Log.e(TAG, "Error updating " + cardType + " card content: " + e.getMessage(), e);
@@ -420,8 +434,8 @@ public class NewsActivity extends AppCompatActivity {
         try {
             Log.d(TAG, "Navigating to profile");
             // TODO: Uncomment when ProfileActivity is created
-            // Intent intent = new Intent(this, ProfileActivity.class);
-            // startActivity(intent);
+             Intent intent = new Intent(this, ProfileActivity.class);
+             startActivity(intent);
             showInfoToast("Profile screen - To be implemented");
         } catch (Exception e) {
             Log.e(TAG, "Error navigating to profile: " + e.getMessage(), e);
