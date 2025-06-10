@@ -20,7 +20,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.database.DataSnapshot;
@@ -43,7 +42,7 @@ public class ManageUsersActivity extends AppCompatActivity {
     private TextInputEditText etSearchUsers;
     private RecyclerView recyclerViewUsers;
     private LinearLayout emptyStateLayout, loadingLayout;
-    private SwipeRefreshLayout swipeRefreshLayout;
+
 
     // Firebase
     private DatabaseReference usersRef;

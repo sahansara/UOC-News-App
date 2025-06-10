@@ -35,6 +35,7 @@
         <activity android:name=".ProfileActivity" />
         <activity android:name=".EditProfileActivity" />
         <activity android:name=".AdminMainActivity"/>
+        <activity android:name=".ManageUsersActivity"/>
 
         <!-- (Optional) MainActivity if you're using it later -->
         <activity
