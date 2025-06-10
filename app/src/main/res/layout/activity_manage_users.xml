@@ -31,7 +31,7 @@
 
         <!-- Title -->
         <TextView
-            android:id="@+id/tvTitle@+id/tvTitle"
+            android:id="@+id/tvTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -79,13 +79,13 @@
                 android:id="@+id/searchInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="🔍 Search users..."
+                android:hint=" Search users..."
                 app:startIconDrawable="@drawable/ic_search_enhanced"
                 app:startIconTint="@color/search_icon_color"
                 app:endIconMode="clear_text"
                 app:endIconTint="@color/search_clear_color"
                 app:boxStrokeColor="@color/search_stroke_color"
-                app:boxStrokeColorFocused="@color/search_stroke_focused"
+
                 app:hintTextColor="@color/search_hint_color"
                 app:boxCornerRadiusTopStart="16dp"
                 app:boxCornerRadiusTopEnd="16dp"
