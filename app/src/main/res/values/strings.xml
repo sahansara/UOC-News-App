@@ -118,4 +118,139 @@
     <string name="cd_cancel_button">Cancel</string>
     <string name="cd_save_button">Save</string>
 
+
+    <!-- Admin Dashboard Strings -->
+    <string name="admin_panel_title">Admin Panel</string>
+    <string name="admin_panel_subtitle">Manage your application content</string>
+
+    <!-- Manage Users Card -->
+    <string name="manage_users_title">Manage Users</string>
+    <string name="manage_users_description">View all registered users and remove accounts</string>
+    <string name="manage_users_icon_desc">Manage Users Icon</string>
+
+    <!-- Manage News Card -->
+    <string name="manage_news_title">Manage News</string>
+    <string name="manage_news_description">Add, edit, or delete Academic, Event, or Sports news</string>
+    <string name="manage_news_icon_desc">Manage News Icon</string>
+
+    <!-- Navigation -->
+    <string name="navigate_to_manage_users">Navigate to Manage Users</string>
+    <string name="navigate_to_manage_news">Navigate to Manage News</string>
+
+    <!-- Stats Card -->
+    <string name="total_users_label">Total Users</string>
+    <string name="total_news_label">Total News</string>
+    <string name="stats_placeholder">--</string>
+
+    <!-- Content Descriptions -->
+    <string name="uoc_daily_logo_desc">UOC Daily Logo</string>
+    <string name="arrow_right_desc">Arrow Right</string>
+
+    <!-- Activity Titles -->
+    <string name="admin_dashboard_activity_title">Admin Dashboard</string>
+    <string name="manage_users_activity_title">Manage Users</string>
+    <string name="news_management_activity_title">News Management</string>
+
+    <!-- Common Admin Strings -->
+    <string name="admin_access_required">Admin access required</string>
+    <string name="admin_login_required">Please login as admin to continue</string>
+    <string name="admin_privileges">Admin Privileges</string>
+
+    <!-- Action Buttons -->
+    <string name="view_all_users">View All Users</string>
+    <string name="add_new_news">Add New News</string>
+    <string name="edit_news">Edit News</string>
+    <string name="delete_news">Delete News</string>
+    <string name="remove_user">Remove User</string>
+
+    <!-- Categories -->
+    <string name="academic_news">Academic News</string>
+    <string name="event_news">Event News</string>
+    <string name="sports_news">Sports News</string>
+
+    <!-- Status Messages -->
+    <string name="loading_data">Loading data...</string>
+    <string name="no_users_found">No users found</string>
+    <string name="no_news_found">No news found</string>
+    <string name="operation_successful">Operation completed successfully</string>
+    <string name="operation_failed">Operation failed. Please try again</string>
+
+    <!-- Confirmation Messages -->
+    <string name="confirm_delete_user">Are you sure you want to delete this user?</string>
+    <string name="confirm_delete_news">Are you sure you want to delete this news?</string>
+    <string name="confirm_logout_admin">Are you sure you want to logout from admin panel?</string>
+
+    <!-- Error Messages -->
+    <string name="error_loading_users">Error loading users</string>
+    <string name="ad_error_loading_news">Error loading news</string>
+    <string name="error_deleting_user">Error deleting user</string>
+    <string name="error_deleting_news">Error deleting news</string>
+    <string name="error_network">Network error. Please check your connection</string>
+
+    <!-- Success Messages -->
+    <string name="user_deleted_successfully">User deleted successfully</string>
+    <string name="news_deleted_successfully">News deleted successfully</string>
+    <string name="news_added_successfully">News added successfully</string>
+    <string name="news_updated_successfully">News updated successfully</string>
+
+    <!-- Dialog Buttons -->
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="ad_cancel">Cancel</string>
+    <string name="confirm">Confirm</string>
+    <string name="ok">OK</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
+    <string name="ad_save">Save</string>
+    <string name="update">Update</string>
+    <string name="add">Add</string>
+
+    <!-- Menu Options -->
+    <string name="logout_admin">Logout Admin</string>
+    <string name="sign_out_icon">Logout icon</string>
+    <string name="refresh_data">Refresh Data</string>
+    <string name="admin_settings">Admin Settings</string>
+
+    <!-- Placeholder Text -->
+    <string name="search_users">Search users...</string>
+    <string name="search_news">Search news...</string>
+    <string name="enter_news_title">Enter news title</string>
+    <string name="enter_news_content">Enter news content</string>
+    <string name="select_category">Select category</string>
+
+    <!-- Admin Dashboard Stats -->
+    <string name="users_count_format">%d Users</string>
+    <string name="news_count_format">%d News</string>
+    <string name="last_updated">Last updated: %s</string>
+
+    <!-- Additional Admin Features -->
+    <string name="admin_dashboard">Admin Dashboard</string>
+    <string name="user_management">User Management</string>
+    <string name="news_management">News Management</string>
+    <string name="system_overview">System Overview</string>
+    <string name="quick_actions">Quick Actions</string>
+
+    <!-- Toast Messages -->
+    <string name="please_wait">Please wait...</string>
+    <string name="processing_request">Processing request...</string>
+    <string name="data_refreshed">Data refreshed successfully</string>
+
+
+    <!-- String resources -->
+    <string name="MANAGE_USERS_TITLE">Manage Users</string>
+    <string name="BACK_BUTTON">Back</string>
+    <string name="REFRESH_DATA">Refresh Data</string>
+    <string name="LOADING_DATA">Loading users...</string>
+    <string name="NO_USERS_FOUND">No users found</string>
+    <string name="REMOVE_USER">Remove User</string>
+    <string name="DELETE_USER_TITLE">Delete User</string>
+    <string name="DELETE_USER_MESSAGE">Are you sure you want to delete this user? This action cannot be undone.</string>
+    <string name="DELETE_BUTTON">Delete</string>
+    <string name="CANCEL_BUTTON">Cancel</string>
+    <string name="USER_DELETED_SUCCESS">User deleted successfully</string>
+    <string name="DELETE_ERROR">Error deleting user</string>
+    <string name="LOAD_ERROR">Error loading users</string>
+    <string name="SEARCH_HINT">🔍 Search users...</string>
+    <string name="USERS_COUNT_FORMAT">%d Users found</string>
+    <string name="ACTIVE_STATUS">Active since registration</string>
 </resources>

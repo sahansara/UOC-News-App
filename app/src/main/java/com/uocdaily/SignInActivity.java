@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import android.widget.TextView;
-
+import com.google.firebase.database.FirebaseDatabase;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -214,14 +214,51 @@ public class SignInActivity extends AppCompatActivity {
     /**
      * Navigate to main activity after successful login
      */
+    // OLD METHOD - REPLACE COMPLETELY:
     private void navigateNewsActivity() {
         try {
-            Intent intent = new Intent(SignInActivity.this, NewsActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(intent);
-            finish();
+            // Get current user
+            FirebaseUser currentUser = mAuth.getCurrentUser();
+            if (currentUser == null) {
+                showErrorToast("User authentication failed");
+                return;
+            }
+
+            String userId = currentUser.getUid();
+
+            // Check user role from database
+            FirebaseDatabase.getInstance().getReference()
+                    .child("users")
+                    .child(userId)
+                    .child("role")
+                    .get()
+                    .addOnSuccessListener(dataSnapshot -> {
+                        String userRole = dataSnapshot.getValue(String.class);
+
+                        Intent intent;
+                        if ("admin".equals(userRole)) {
+                            // Navigate to Admin Dashboard
+                            intent = new Intent(SignInActivity.this, AdminMainActivity.class);
+                        } else {
+                            // Navigate to Normal User Dashboard
+                            intent = new Intent(SignInActivity.this, NewsActivity.class);
+                        }
+
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(intent);
+                        finish();
+                    })
+                    .addOnFailureListener(e -> {
+                        Log.e(TAG, "Error checking user role: " + e.getMessage());
+                        // Default to normal user if role check fails
+                        Intent intent = new Intent(SignInActivity.this, NewsActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(intent);
+                        finish();
+                    });
+
         } catch (Exception e) {
-            Log.e(TAG, "Error navigating to main activity: " + e.getMessage(), e);
+            Log.e(TAG, "Error navigating after login: " + e.getMessage(), e);
             showErrorToast("Navigation error occurred");
         }
     }

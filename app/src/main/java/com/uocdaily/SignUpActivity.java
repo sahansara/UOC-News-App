@@ -198,6 +198,7 @@ public class SignUpActivity extends AppCompatActivity {
             HashMap<String, Object> userData = new HashMap<>();
             userData.put("username", username);
             userData.put("email", email);
+            userData.put("role", "user");
             userData.put("createdAt", System.currentTimeMillis());
 
             // Save to Firebase Realtime Database

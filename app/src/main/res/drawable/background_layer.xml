@@ -2,6 +2,7 @@
     <!-- Background color -->
     <item>
         <color android:color="#CC8A8EFF" /> <!-- 80% opacity -->
+
     </item>
 
     <!-- Background image -->

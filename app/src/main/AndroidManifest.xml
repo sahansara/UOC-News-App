@@ -34,6 +34,7 @@
         <activity android:name=".NewsActivity" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".EditProfileActivity" />
+        <activity android:name=".AdminMainActivity"/>
 
         <!-- (Optional) MainActivity if you're using it later -->
         <activity

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#CC8A8EFF"
+    android:background="@drawable/background_layer"
     tools:context=".MainActivity">
 
     <!-- Top Bar Section -->

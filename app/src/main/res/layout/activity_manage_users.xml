@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_layer"
+    tools:context=".ManageUsersActivity">
+
+       <!-- Header Section -->
+    <LinearLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+        android:padding="16dp"
+        android:elevation="4dp"
+        android:gravity="center_vertical">
+
+        <!-- Back Button -->
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_arrow_back"
+            android:contentDescription="@string/back_button"
+            android:scaleType="centerInside"
+            android:padding="12dp" />
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/tvTitle@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/manage_users_activity_title"
+            android:textColorHint="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginStart="16dp"
+            android:gravity="start|center_vertical" />
+
+        <!-- Refresh Button -->
+        <ImageButton
+            android:id="@+id/btnRefresh"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_refresh"
+            android:contentDescription="@string/refresh_data"
+
+            android:scaleType="centerInside"
+            android:padding="12dp" />
+
+    </LinearLayout>
+    <!-- Search Section -->
+    <LinearLayout
+        android:id="@+id/searchLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/headerLayout"
+        android:orientation="vertical"
+        android:background="@drawable/search_section_background"
+        android:padding="20dp"
+        android:elevation="4dp">
+
+        <!-- Search Bar Container -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp"
+            android:layout_marginBottom="12dp"
+            app:cardBackgroundColor="@android:color/white">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/searchInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="🔍 Search users..."
+                app:startIconDrawable="@drawable/ic_search_enhanced"
+                app:startIconTint="@color/search_icon_color"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/search_clear_color"
+                app:boxStrokeColor="@color/search_stroke_color"
+                app:boxStrokeColorFocused="@color/search_stroke_focused"
+                app:hintTextColor="@color/search_hint_color"
+                app:boxCornerRadiusTopStart="16dp"
+                app:boxCornerRadiusTopEnd="16dp"
+                app:boxCornerRadiusBottomStart="16dp"
+                app:boxCornerRadiusBottomEnd="16dp"
+                app:boxStrokeWidth="2dp"
+                app:boxStrokeWidthFocused="3dp"
+                app:helperTextEnabled="false"
+                android:layout_margin="4dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etSearchUsers"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:textSize="16sp"
+                    android:textColor="@color/search_text_color"
+                    android:textColorHint="@color/search_hint_color"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:background="@drawable/search_edittext_background" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Users Count with Enhanced Styling -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@drawable/users_count_background"
+            android:padding="12dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_users"
+                app:tint="@color/users_count_icon_color"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:id="@+id/tffvUsersCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/loading_data"
+                android:textColor="@color/users_count_text_color"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                 />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <!-- Users List Section -->
+
+    <!-- Empty State -->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewUsers"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/searchLayout"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="8dp"
+        android:clipToPadding="false"
+        android:padding="8dp"
+        android:scrollbars="vertical"
+        tools:listitem="@layout/item_user_card" />
+
+    <LinearLayout
+        android:id="@+id/emptyStateLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/searchLayout"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="32dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_users_empty"
+            android:alpha="0.5"
+            android:contentDescription="@string/no_users_found" />
+
+
+
+
+    </LinearLayout>
+
+    <!-- Loading Layout -->
+    <LinearLayout
+        android:id="@+id/loadingLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/searchLayout"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="32dp"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:indeterminateTint="@color/colorPrimary" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/loading_data"
+            android:textSize="16sp"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>
