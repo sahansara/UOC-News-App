@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
 
-    <color name="divider_color">#E0E0E0</color>
+
+
     <color name="colorPrimary">#8A8EFF</color> <!-- your brand color -->
     <color name="colorPrimaryLight">#DDE0FF</color> <!-- soft background tint -->
 
@@ -15,5 +14,55 @@
     <color name="search_clear_color">#9CA3AF</color>
     <color name="users_count_text_color">#1E40AF</color>
     <color name="users_count_icon_color">#3B82F6</color>
+
+
+    <!-- Primary Colors (UOC Daily Theme) -->
+    <color name="primary_color">#8A2BE2</color> <!-- BlueViolet -->
+    <color name="primary_dark">#6A1B9A</color> <!-- Darker Purple -->
+    <color name="secondary_color">#5C6BC0</color> <!-- Indigo -->
+    <color name="secondary_dark">#3F51B5</color> <!-- Darker Indigo -->
+
+    <!-- Background Colors -->
+    <color name="header_background">#8A2BE2</color> <!-- Same as primary -->
+    <color name="card_background">#FFFFFF</color> <!-- White -->
+    <color name="main_background">#F5F5F5</color> <!-- Light Gray -->
+
+    <!-- Text Colors -->
+    <color name="primary_text">#212121</color> <!-- Dark Gray -->
+    <color name="secondary_text">#757575</color> <!-- Medium Gray -->
+    <color name="hint_text">#BDBDBD</color> <!-- Light Gray -->
+    <color name="error_text">#F44336</color> <!-- Red -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+    <!-- Category Colors -->
+    <color name="category_academic">#FF9800</color> <!-- Orange -->
+    <color name="category_sport">#4CAF50</color> <!-- Green -->
+    <color name="category_event">#E91E63</color> <!-- Pink -->
+
+    <!-- Border and Divider Colors -->
+    <color name="border_color">#E0E0E0</color> <!-- Light Gray -->
+    <color name="divider_color">#EEEEEE</color> <!-- Very Light Gray -->
+
+    <!-- Button States -->
+    <color name="button_pressed">#6A1B9A</color> <!-- Darker Purple -->
+    <color name="button_disabled">#BDBDBD</color> <!-- Light Gray -->
+
+    <!-- News Item Colors -->
+    <color name="news_item_border">#E0E0E0</color> <!-- Light Gray -->
+    <color name="news_item_pressed">#F5F5F5</color> <!-- Very Light Gray -->
+
+    <!-- Delete Button Colors -->
+    <color name="delete_normal">#FF5722</color> <!-- Deep Orange -->
+    <color name="delete_pressed">#D84315</color> <!-- Darker Orange -->
+
+    <!-- Image Preview -->
+    <color name="image_preview_bg">#FAFAFA</color> <!-- Very Light Gray -->
+    <color name="icon_tint">#9E9E9E</color> <!-- Gray -->
+
+    <!-- Transparent Colors -->
+    <color name="transparent">#00000000</color>
+    <color name="semi_transparent_black">#80000000</color> <!-- 50% Black -->
+    <color name="semi_transparent_white">#80FFFFFF</color> <!-- 50% White -->
 
 </resources>
