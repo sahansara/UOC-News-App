@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_layer"
+    android:orientation="vertical">
+
+    <!-- Header Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="16dp"
+        android:background="@color/header_background">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_arrow_back"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="4dp"
+            app:tint="@color/white" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/manage_news_titles"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:layout_marginEnd="28dp" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Add News Section -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/card_background">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/add_news_title"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary_text"
+                        android:layout_marginBottom="16dp" />
+
+                    <!-- Category Spinner -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/category_label"
+                        android:textSize="14sp"
+                        android:textColor="@color/secondary_text"
+                        android:layout_marginBottom="8dp" />
+
+                    <Spinner
+                        android:id="@+id/spinner_category"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/spinner_background"
+                        android:padding="12dp" />
+
+                    <!-- Image Upload Section -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/thumbnail_label"
+                        android:textSize="14sp"
+                        android:textColor="@color/secondary_text"
+                        android:layout_marginBottom="8dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="16dp">
+
+                        <Button
+                            android:id="@+id/btn_upload_image"
+                            android:layout_width="0dp"
+                            android:layout_height="48dp"
+                            android:layout_weight="1"
+                            android:text="@string/upload_image_text"
+                            android:textSize="14sp"
+                            android:textColor="@color/white"
+                            android:background="@drawable/button_secondary"
+                            android:drawableStart="@drawable/ic_upload"
+                            android:drawablePadding="8dp"
+                            android:gravity="center"
+                            android:layout_marginEnd="8dp" />
+
+                        <ImageView
+                            android:id="@+id/img_preview"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:background="@drawable/image_preview_background"
+                            android:scaleType="centerCrop"
+                            android:visibility="gone"
+                            app:tint="@color/icon_tint" />
+
+                    </LinearLayout>
+
+                    <!-- Title Input -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/title_label"
+                        android:textSize="14sp"
+                        android:textColor="@color/secondary_text"
+                        android:layout_marginBottom="8dp" />
+
+                    <EditText
+                        android:id="@+id/et_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/edittext_background"
+                        android:hint="@string/title_hint"
+                        android:textColorHint="@color/hint_text"
+                        android:textColor="@color/primary_text"
+                        android:textSize="14sp"
+                        android:padding="12dp"
+                        android:maxLines="1"
+                        android:inputType="textCapSentences" />
+
+                    <!-- Description Input -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/description_label"
+                        android:textSize="14sp"
+                        android:textColor="@color/secondary_text"
+                        android:layout_marginBottom="8dp" />
+
+                    <EditText
+                        android:id="@+id/et_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/edittext_background"
+                        android:hint="@string/description_hint"
+                        android:textColorHint="@color/hint_text"
+                        android:textColor="@color/primary_text"
+                        android:textSize="14sp"
+                        android:padding="12dp"
+                        android:gravity="top|start"
+                        android:inputType="textCapSentences|textMultiLine"
+                        android:maxLines="6" />
+
+                    <!-- Validation Message -->
+                    <TextView
+                        android:id="@+id/tv_validation_message"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/validation_message"
+                        android:textSize="12sp"
+                        android:textColor="@color/error_text"
+                        android:visibility="gone"
+                        android:layout_marginBottom="16dp" />
+
+                    <!-- Submit Button -->
+                    <Button
+                        android:id="@+id/btn_submit_news"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:text="@string/add_news_button"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:background="@drawable/button_primary"
+                        android:drawableStart="@drawable/ic_add"
+                        android:drawablePadding="8dp"
+                        android:gravity="center" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- All News Section -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/card_background">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/all_news_title"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary_text"
+                        android:layout_marginBottom="16dp" />
+
+                    <!-- Academic News Section -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/academic_category"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/category_academic"
+                        android:layout_marginBottom="12dp"
+                        android:drawableStart="@drawable/ic_school"
+                        android:drawablePadding="8dp"
+                        android:gravity="center_vertical" />
+
+                    <LinearLayout
+                        android:id="@+id/layout_academic_news"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginBottom="20dp">
+
+                        <!-- Academic news items will be added programmatically -->
+                        <TextView
+                            android:id="@+id/tv_no_academic_news"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/no_news_message"
+                            android:textSize="14sp"
+                            android:textColor="@color/secondary_text"
+                            android:gravity="center"
+                            android:padding="20dp"
+                            android:visibility="visible" />
+
+                    </LinearLayout>
+
+                    <!-- Sport News Section -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sport_category"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/category_sport"
+                        android:layout_marginBottom="12dp"
+                        android:drawableStart="@drawable/ic_sports"
+                        android:drawablePadding="8dp"
+                        android:gravity="center_vertical" />
+
+                    <LinearLayout
+                        android:id="@+id/layout_sport_news"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginBottom="20dp">
+
+                        <!-- Sport news items will be added programmatically -->
+                        <TextView
+                            android:id="@+id/tv_no_sport_news"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/no_news_message"
+                            android:textSize="14sp"
+                            android:textColor="@color/secondary_text"
+                            android:gravity="center"
+                            android:padding="20dp"
+                            android:visibility="visible" />
+
+                    </LinearLayout>
+
+                    <!-- Event News Section -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/event_category"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/category_event"
+                        android:layout_marginBottom="12dp"
+                        android:drawableStart="@drawable/ic_event"
+                        android:drawablePadding="8dp"
+                        android:gravity="center_vertical" />
+
+                    <LinearLayout
+                        android:id="@+id/layout_event_news"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <!-- Event news items will be added programmatically -->
+                        <TextView
+                            android:id="@+id/tv_no_event_news"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/no_news_message"
+                            android:textSize="14sp"
+                            android:textColor="@color/secondary_text"
+                            android:gravity="center"
+                            android:padding="20dp"
+                            android:visibility="visible" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

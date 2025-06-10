@@ -56,61 +56,68 @@
 
     </LinearLayout>
     <!-- Search Section -->
+
+
+    <!-- Users List Section -->
+
+    <!-- Empty State -->
+
     <LinearLayout
         android:id="@+id/searchLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/headerLayout"
-        android:orientation="vertical"
+        android:layout_marginTop="-4dp"
         android:background="@drawable/search_section_background"
-        android:padding="20dp"
-        android:elevation="4dp">
+        android:elevation="4dp"
+        android:orientation="vertical"
+        android:padding="20dp">
 
         <!-- Search Bar Container -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="16dp"
-            app:cardElevation="6dp"
             android:layout_marginBottom="12dp"
-            app:cardBackgroundColor="@android:color/white">
+            app:cardBackgroundColor="@android:color/white"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/searchInputLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="4dp"
                 android:hint=" Search users..."
-                app:startIconDrawable="@drawable/ic_search_enhanced"
-                app:startIconTint="@color/search_icon_color"
-                app:endIconMode="clear_text"
-                app:endIconTint="@color/search_clear_color"
-                app:boxStrokeColor="@color/search_stroke_color"
-
-                app:hintTextColor="@color/search_hint_color"
-                app:boxCornerRadiusTopStart="16dp"
-                app:boxCornerRadiusTopEnd="16dp"
-                app:boxCornerRadiusBottomStart="16dp"
                 app:boxCornerRadiusBottomEnd="16dp"
+                app:boxCornerRadiusBottomStart="16dp"
+                app:boxCornerRadiusTopEnd="16dp"
+
+                app:boxCornerRadiusTopStart="16dp"
+                app:boxStrokeColor="@color/search_stroke_color"
                 app:boxStrokeWidth="2dp"
                 app:boxStrokeWidthFocused="3dp"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/search_clear_color"
                 app:helperTextEnabled="false"
-                android:layout_margin="4dp"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                app:hintTextColor="@color/search_hint_color"
+                app:startIconDrawable="@drawable/ic_search_enhanced"
+                app:startIconTint="@color/search_icon_color">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etSearchUsers"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/search_edittext_background"
                     android:inputType="text"
                     android:maxLines="1"
-                    android:textSize="16sp"
+                    android:paddingStart="16dp"
+                    android:paddingTop="16dp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="16dp"
                     android:textColor="@color/search_text_color"
                     android:textColorHint="@color/search_hint_color"
-                    android:paddingStart="16dp"
-                    android:paddingEnd="16dp"
-                    android:paddingTop="16dp"
-                    android:paddingBottom="16dp"
-                    android:background="@drawable/search_edittext_background" />
+                    android:textSize="16sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -120,17 +127,17 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
             android:background="@drawable/users_count_background"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
             android:padding="12dp">
 
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
+                android:layout_marginEnd="8dp"
                 android:src="@drawable/ic_users"
-                app:tint="@color/users_count_icon_color"
-                android:layout_marginEnd="8dp" />
+                app:tint="@color/users_count_icon_color" />
 
             <TextView
                 android:id="@+id/tffvUsersCount"
@@ -139,17 +146,11 @@
                 android:text="@string/loading_data"
                 android:textColor="@color/users_count_text_color"
                 android:textSize="14sp"
-                android:textStyle="bold"
-                 />
+                android:textStyle="bold" />
 
         </LinearLayout>
 
     </LinearLayout>
-
-
-    <!-- Users List Section -->
-
-    <!-- Empty State -->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewUsers"

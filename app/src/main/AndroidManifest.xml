@@ -2,9 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.uocdaily">  <!-- Use your actual package name -->
-    <uses-permission android:name="android.permission.INTERNET" />
 
+    <!-- Permissions -->
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
 
     <application
         android:allowBackup="true"
@@ -27,17 +33,23 @@
             </intent-filter>
         </activity>
 
-        <!-- Sign In Screen -->
+        <!-- Other Activities -->
         <activity android:name=".SignInActivity" />
-
         <activity android:name=".SignUpActivity" />
         <activity android:name=".NewsActivity" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".EditProfileActivity" />
-        <activity android:name=".AdminMainActivity"/>
-        <activity android:name=".ManageUsersActivity"/>
+        <activity android:name=".AdminMainActivity" />
+        <activity android:name=".ManageUsersActivity" />
 
-        <!-- (Optional) MainActivity if you're using it later -->
+        <!-- Newly Added Activity -->
+        <activity
+            android:name=".ManageNewsActivity"
+            android:label="@string/manage_news_title"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Optional MainActivity -->
         <activity
             android:name=".MainActivity"
             android:exported="false" />
