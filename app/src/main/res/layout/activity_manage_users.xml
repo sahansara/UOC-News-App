@@ -19,28 +19,31 @@
         android:gravity="center_vertical">
 
         <!-- Back Button -->
+
+        <!-- Title -->
         <ImageButton
             android:id="@+id/btnBack"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/ic_arrow_back"
-            android:contentDescription="@string/back_button"
-            android:scaleType="centerInside"
-            android:padding="12dp" />
 
-        <!-- Title -->
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/back_button"
+
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_arrow_back" />
+
         <TextView
             android:id="@+id/tvTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="@string/manage_users_activity_title"
+            android:textAlignment="center"
             android:textColorHint="@android:color/white"
-            android:textSize="20sp"
+            android:textSize="25sp"
             android:textStyle="bold"
             android:layout_marginStart="16dp"
-            android:gravity="start|center_vertical" />
+             />
 
         <!-- Refresh Button -->
         <ImageButton

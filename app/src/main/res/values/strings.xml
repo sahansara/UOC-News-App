@@ -294,7 +294,7 @@
 
 
 
-    <!--news pages -->
+    <!--academic news pages -->
 
     <!-- Screen Title and Navigation -->
     <string name="academic_news_title">Academic News</string>
@@ -312,5 +312,64 @@
     <string name="featured_academic_news_desc">Scientists at the university have made significant advances in artificial intelligence research, opening new possibilities for machine learning applications across various academic disciplines.</string>
 
     <string name="news_time_2_hours">2 hours ago</string>
+
+
+    <!--events news pages -->
+
+    <!-- Screen Title and Navigation -->
+    <string name="ev_news_title">Events News</string>
+    <string name="ev_back_button_desc">Go back to previous screen</string>
+
+    <!-- Search Bar -->
+    <string name="ev_search_academic_news_hint">Search event news</string>
+    <string name="ev_search_icon_desc">Search icon</string>
+
+    <!-- News Content -->
+    <string name="ev_news_image_desc">News article image</string>
+
+    <!-- Featured News -->
+    <string name="ev_featured_academic_news_title">Annual Tech Fair 2025</string>
+    <string name="ev_featured_academic_news_desc">Join us for the Tech Fair with innovative student projects, guest speakers, and workshops.</string>
+
+    <string name="ev_news_time_2_hours">2 hours ago</string>
+
+
+    <!--sports news pages -->
+
+    <!-- Screen Title and Navigation -->
+    <string name="sp_news_title">Sports News</string>
+    <string name="sp_back_button_desc">Go back to previous screen</string>
+
+    <!-- Search Bar -->
+    <string name="sp_search_academic_news_hint">Search sport news</string>
+    <string name="sp_search_icon_desc">Search icon</string>
+
+    <!-- News Content -->
+    <string name="sp_news_image_desc">News article image</string>
+
+    <!-- Featured News -->
+    <string name="sp_featured_academic_news_title">2028 Basketball team wins chamoionship</string>
+    <string name="sp_featured_academic_news_desc">Join us for the Tech Fair with innovative student projects, guest speakers, and workshops.</string>
+
+    <string name="sp_news_time_2_hours">2 hours ago</string>
+
+
+
+    <!-- Dev Info Screen Strings -->
+    <string name="dev_info_title">Dev info</string>
+    <string name="developer_name">W.K.V Sahansara</string>
+    <string name="developer_index">2022T01573</string>
+    <string name="app_purpose_description">This app was developed to deliver campus news in a clear, fast, and user-friendly way for all students.</string>
+    <string name="app_version">version 1.0</string>
+    <string name="exit_button_text">Exit</string>
+
+    <!-- Content Descriptions for Dev Info -->
+    <string name="dv_back_button_desc">Back Button</string>
+    <string name="profile_image_desc">Developer Profile Image</string>
+    <string name="decorative_icon_desc">Decorative Icon</string>
+    <string name="books_icon_desc">Books Icon</string>
+
+    <!-- Activity Title -->
+    <string name="dev_info_activity_title">Developer Information</string>
 
 </resources>

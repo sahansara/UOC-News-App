@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-
-
+     <color name="round_btn">#0E2D4D</color>
     <color name="colorPrimary">#8A8EFF</color> <!-- your brand color -->
     <color name="colorPrimaryLight">#DDE0FF</color> <!-- soft background tint -->
 
@@ -23,7 +22,7 @@
     <color name="secondary_dark">#3F51B5</color> <!-- Darker Indigo -->
 
     <!-- Background Colors -->
-    <color name="header_background">#8A2BE2</color> <!-- Same as primary -->
+    <color name="header_background">#6B8A2BE2</color> <!-- Same as primary -->
     <color name="card_background">#FFFFFF</color> <!-- White -->
     <color name="main_background">#F5F5F5</color> <!-- Light Gray -->
 

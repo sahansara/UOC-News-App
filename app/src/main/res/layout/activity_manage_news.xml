@@ -21,15 +21,15 @@
             android:layout_height="24dp"
             android:src="@drawable/ic_arrow_back"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:padding="4dp"
-            app:tint="@color/white" />
+
+             />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/manage_news_titles"
-            android:textSize="20sp"
+            android:textSize="25sp"
             android:textStyle="bold"
             android:textColor="@color/white"
             android:gravity="center"

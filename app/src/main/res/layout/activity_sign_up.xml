@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/baseline_cottage_24">
+    android:background="@drawable/background_layer">
 
     <!-- Logo Section -->
     <ImageView
@@ -11,6 +11,7 @@
         android:layout_height="150dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
+
         android:src="@drawable/logo"
         android:contentDescription="@string/logo_description" />
 
@@ -20,7 +21,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/logoImageView"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="40dp"
+
         android:orientation="vertical"
         android:paddingHorizontal="40dp">
 
@@ -136,18 +138,22 @@
     <!-- Already have account text - Fixed with minimum touch target -->
     <TextView
         android:id="@+id/tvAlreadyHaveAccount"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
+
         android:layout_below="@id/btnSignUp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:text="@string/login_prompt"
-        android:textColor="#00FFFF"
+        android:textColor="#FFFF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:background="@drawable/login_register_back"
+
         android:textSize="16sp"
         android:fontFamily="sans-serif"
         android:clickable="true"
         android:focusable="true"
         android:textStyle="bold"
-        android:background="?android:attr/selectableItemBackground"
+
         android:gravity="center"
         android:paddingHorizontal="16dp" /></RelativeLayout>

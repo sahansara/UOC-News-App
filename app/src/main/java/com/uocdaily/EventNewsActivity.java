@@ -33,10 +33,10 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class AcademicNewsActivity extends AppCompatActivity {
+public class EventNewsActivity extends AppCompatActivity {
 
-    private static final String TAG = "AcademicNewsActivity";
-    private static final String ACADEMIC_CATEGORY = "Academic";
+    private static final String TAG = "EventNewsActivity";
+    private static final String EVENT_CATEGORY = "Event";
 
     // Firebase
     private DatabaseReference newsRef;
@@ -47,18 +47,18 @@ public class AcademicNewsActivity extends AppCompatActivity {
     private LinearLayout newsContainer;
 
     // Data
-    private List<News> academicNewsList;
+    private List<News> EventNewsList;
     private List<News> filteredNewsList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_academic_news);
+        setContentView(R.layout.activity_event_news);
 
         initializeFirebase();
         initializeViews();
         setupListeners();
-        loadAcademicNews();
+        loadEventNews();
     }
 
     private void initializeFirebase() {
@@ -77,7 +77,7 @@ public class AcademicNewsActivity extends AppCompatActivity {
         }
 
         // Initialize lists
-        academicNewsList = new ArrayList<>();
+        EventNewsList = new ArrayList<>();
         filteredNewsList = new ArrayList<>();
     }
 
@@ -109,16 +109,16 @@ public class AcademicNewsActivity extends AppCompatActivity {
         });
     }
 
-    private void loadAcademicNews() {
+    private void loadEventNews() {
         // Show loading state (you can add a progress bar here)
 
-        // Query to get only academic news
-        Query academicQuery = newsRef.orderByChild("category").equalTo(ACADEMIC_CATEGORY);
+        // Query to get only Event news
+        Query EventQuery = newsRef.orderByChild("category").equalTo(EVENT_CATEGORY);
 
-        academicQuery.addValueEventListener(new ValueEventListener() {
+        EventQuery.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                academicNewsList.clear();
+                EventNewsList.clear();
 
                 if (dataSnapshot.exists()) {
                     for (DataSnapshot newsSnapshot : dataSnapshot.getChildren()) {
@@ -129,7 +129,7 @@ public class AcademicNewsActivity extends AppCompatActivity {
                                 if (news.getId() == null || news.getId().isEmpty()) {
                                     news.setId(newsSnapshot.getKey());
                                 }
-                                academicNewsList.add(news);
+                                EventNewsList.add(news);
                             }
                         } catch (Exception e) {
                             Log.e(TAG, "Error parsing news data: " + e.getMessage());
@@ -137,7 +137,7 @@ public class AcademicNewsActivity extends AppCompatActivity {
                     }
 
                     // Sort news by timestamp (latest first)
-                    Collections.sort(academicNewsList, new Comparator<News>() {
+                    Collections.sort(EventNewsList, new Comparator<News>() {
                         @Override
                         public int compare(News n1, News n2) {
                             return Long.compare(n2.getTimestamp(), n1.getTimestamp());
@@ -146,21 +146,21 @@ public class AcademicNewsActivity extends AppCompatActivity {
 
                     // Display the news
                     filteredNewsList.clear();
-                    filteredNewsList.addAll(academicNewsList);
+                    filteredNewsList.addAll(EventNewsList);
                     displayNews();
 
-                    Log.d(TAG, "Loaded " + academicNewsList.size() + " academic news items");
+                    Log.d(TAG, "Loaded " + EventNewsList.size() + " Event news items");
                 } else {
-                    // No academic news found
+                    // No Event news found
                     showNoNewsMessage();
-                    Log.d(TAG, "No academic news found");
+                    Log.d(TAG, "No Event news found");
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                Log.e(TAG, "Failed to load academic news: " + databaseError.getMessage());
-                Toast.makeText(AcademicNewsActivity.this,
+                Log.e(TAG, "Failed to load Event news: " + databaseError.getMessage());
+                Toast.makeText(EventNewsActivity.this,
                         "Failed to load news. Please try again.",
                         Toast.LENGTH_SHORT).show();
             }
@@ -214,11 +214,11 @@ public class AcademicNewsActivity extends AppCompatActivity {
         if (news.getImageUrl() != null && !news.getImageUrl().isEmpty()) {
             Glide.with(this)
                     .load(news.getImageUrl())
-                    .placeholder(R.drawable.ic_school)
-                    .error(R.drawable.ic_school)
+                    .placeholder(R.drawable.ic_event)
+                    .error(R.drawable.ic_event)
                     .into(ivNewsImage);
         } else {
-            ivNewsImage.setImageResource(R.drawable.ic_school);
+            ivNewsImage.setImageResource(R.drawable.ic_event);
         }
 
         // Set click listener for the card
@@ -236,7 +236,7 @@ public class AcademicNewsActivity extends AppCompatActivity {
         // This method updates the static news cards in your XML layout
         // Update based on available news items
 
-        
+
 
         // Featured news (first item)
         if (filteredNewsList.size() > 0) {
@@ -266,11 +266,11 @@ public class AcademicNewsActivity extends AppCompatActivity {
             if (news.getImageUrl() != null && !news.getImageUrl().isEmpty()) {
                 Glide.with(this)
                         .load(news.getImageUrl())
-                        .placeholder(R.drawable.ic_school)
-                        .error(R.drawable.ic_school)
+                        .placeholder(R.drawable.ic_event)
+                        .error(R.drawable.ic_event)
                         .into(image);
             } else {
-                image.setImageResource(R.drawable.ic_school);
+                image.setImageResource(R.drawable.ic_event);
             }
 
             // Set click listener
@@ -287,10 +287,10 @@ public class AcademicNewsActivity extends AppCompatActivity {
         filteredNewsList.clear();
 
         if (searchText.isEmpty()) {
-            filteredNewsList.addAll(academicNewsList);
+            filteredNewsList.addAll(EventNewsList);
         } else {
             String searchLower = searchText.toLowerCase().trim();
-            for (News news : academicNewsList) {
+            for (News news : EventNewsList) {
                 if (news.getTitle().toLowerCase().contains(searchLower) ||
                         news.getDescription().toLowerCase().contains(searchLower)) {
                     filteredNewsList.add(news);
@@ -315,7 +315,7 @@ public class AcademicNewsActivity extends AppCompatActivity {
 
     private void showNoNewsMessage() {
         // Show a message when no news is available
-        Toast.makeText(this, "No academic news available at the moment", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "No Event news available at the moment", Toast.LENGTH_SHORT).show();
 
         // You can also add a TextView to show "No news available" message
         // in your layout and make it visible here
