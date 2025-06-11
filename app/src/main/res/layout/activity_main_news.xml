@@ -59,7 +59,7 @@
         android:layout_marginTop="16dp"
         android:text="@string/news_screen_title"
         android:textSize="32sp"
-        android:textColor="#000000"
+        android:textColor="#FFF"
         android:textStyle="bold"
         android:fontFamily="sans-serif" />
 

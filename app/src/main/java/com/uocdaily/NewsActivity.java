@@ -458,7 +458,7 @@ public class NewsActivity extends AppCompatActivity {
             // TODO: Uncomment when AcademicActivity is created
             Intent intent = new Intent(this, AcademicNewsActivity.class);
              startActivity(intent);
-            showInfoToast("Academic screen - To be implemented");
+            showInfoToast("move to Academics...");
         } catch (Exception e) {
             Log.e(TAG, "Error navigating to academic: " + e.getMessage(), e);
             showErrorToast("Cannot open academic section");
@@ -469,9 +469,9 @@ public class NewsActivity extends AppCompatActivity {
         try {
             Log.d(TAG, "Navigating to events");
             // TODO: Uncomment when EventsActivity is created
-            //Intent intent = new Intent(this, EventsActivity.class);
-            // startActivity(intent);
-            showInfoToast("Events screen - To be implemented");
+            Intent intent = new Intent(this, EventNewsActivity.class);
+            startActivity(intent);
+            showInfoToast("move to events...");
         } catch (Exception e) {
             Log.e(TAG, "Error navigating to events: " + e.getMessage(), e);
             showErrorToast("Cannot open events section");
@@ -482,9 +482,9 @@ public class NewsActivity extends AppCompatActivity {
         try {
             Log.d(TAG, "Navigating to sports");
             // TODO: Uncomment when SportsActivity is created
-            // Intent intent = new Intent(this, SportsActivity.class);
-            // startActivity(intent);
-            showInfoToast("Sports screen - To be implemented");
+             Intent intent = new Intent(this, SportsNewsActivity.class);
+             startActivity(intent);
+            showInfoToast("move to Sports...");
         } catch (Exception e) {
             Log.e(TAG, "Error navigating to sports: " + e.getMessage(), e);
             showErrorToast("Cannot open sports section");
@@ -495,8 +495,8 @@ public class NewsActivity extends AppCompatActivity {
         try {
             Log.d(TAG, "Navigating to dev info");
             // TODO: Uncomment when DeveloperInfoActivity is created
-            // Intent intent = new Intent(this, DeveloperInfoActivity.class);
-            // startActivity(intent);
+             Intent intent = new Intent(this, Devloper_info_activity.class);
+             startActivity(intent);
             showInfoToast("Developer info screen - To be implemented");
         } catch (Exception e) {
             Log.e(TAG, "Error navigating to dev info: " + e.getMessage(), e);

@@ -14,26 +14,17 @@
         <!-- App Logo -->
 
         <!-- App Title -->
-        <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="20dp"
-            android:contentDescription="@string/logo_description"
-            android:src="@drawable/logo" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/app_name"
-            android:textSize="26sp"
-            android:textStyle="bold"
-            android:textColor="#0E2D4D"
-            android:layout_marginBottom="50dp"
-            android:layout_marginTop="50dp" />
 
 
         <!-- Username -->
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="40dp"
+            android:contentDescription="@string/logo_description"
+            android:src="@drawable/logo" />
+
         <EditText
             android:id="@+id/editTextEmail"
             android:layout_width="320dp"
@@ -69,32 +60,30 @@
 
         <!-- Sign Up Text -->
         <!-- Update the Sign Up TextView to make it clickable -->
-        <TextView
-            android:id="@+id/textSignUp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:minWidth="48dp"
-            android:paddingTop="14dp"
-            android:paddingBottom="14dp"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:text="@string/signup_prompt"
-            android:textColor="#000000"
-            android:textSize="14sp"
-            android:layout_marginBottom="20dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:textStyle="bold"
-            android:background="?android:attr/selectableItemBackground" />
 
         <!-- Login Button -->
+
+        <TextView
+            android:id="@+id/textSignUp"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginLeft="-16dp"
+            android:layout_marginRight="-16dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/login_register_back"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="@string/signup_prompt"
+            android:textColor="#FFF"
+            android:textSize="16sp"
+            android:gravity="center"
+            />
         <Button
             android:id="@+id/buttonLogin"
             android:layout_width="160dp"
             android:layout_height="50dp"
             android:text="@string/login"
-            android:background="@drawable/rounded_button"
+            android:background="@drawable/exit_button_background"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             android:fontFamily="sans-serif"

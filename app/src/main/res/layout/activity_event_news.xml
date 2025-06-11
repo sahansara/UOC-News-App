@@ -31,7 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="@string/academic_news_title"
+            android:text="@string/ev_news_title"
             android:textColor="@color/white"
             android:textSize="25sp"
             android:textStyle="bold"
@@ -71,7 +71,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
-                android:hint="@string/search_academic_news_hint"
+                android:hint="@string/ev_search_academic_news_hint"
                 android:textColorHint="@color/search_hint_color"
                 android:textColor="@color/search_text_color"
                 android:textSize="16sp"
@@ -112,7 +112,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/news_item_background"
+                    android:background="@drawable/evnewscardborder"
                     android:orientation="horizontal"
                     android:padding="16dp">
 
@@ -130,7 +130,7 @@
                             android:scaleType="centerCrop"
                             android:src="@drawable/ic_school"
 
-                            android:contentDescription="@string/news_image_desc" />
+                            android:contentDescription="@string/ev_news_image_desc" />
 
                     </androidx.cardview.widget.CardView>
 
@@ -144,7 +144,7 @@
                             android:id="@+id/tv_featured_news_title"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/featured_academic_news_title"
+                            android:text="@string/ev_featured_academic_news_title"
                             android:textColor="@color/news_title_color"
                             android:textSize="18sp"
                             android:textStyle="bold"
@@ -157,7 +157,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
-                            android:text="@string/featured_academic_news_desc"
+                            android:text="@string/ev_featured_academic_news_desc"
                             android:textColor="@color/news_desc_color"
                             android:textSize="14sp"
                             android:fontFamily="sans-serif"

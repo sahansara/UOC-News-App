@@ -42,6 +42,10 @@
         <activity android:name=".AdminMainActivity" />
         <activity android:name=".ManageUsersActivity" />
         <activity android:name=".AcademicNewsActivity"/>
+        <activity android:name=".EventNewsActivity"/>
+        <activity android:name=".SportsNewsActivity"/>
+        <activity android:name=".Devloper_info_activity"/>
+        <activity android:name=".ReadNewsActivity"/>
 
         <!-- Newly Added Activity -->
         <activity
