@@ -456,8 +456,8 @@ public class NewsActivity extends AppCompatActivity {
         try {
             Log.d(TAG, "Navigating to academic");
             // TODO: Uncomment when AcademicActivity is created
-            // Intent intent = new Intent(this, AcademicActivity.class);
-            // startActivity(intent);
+            Intent intent = new Intent(this, AcademicNewsActivity.class);
+             startActivity(intent);
             showInfoToast("Academic screen - To be implemented");
         } catch (Exception e) {
             Log.e(TAG, "Error navigating to academic: " + e.getMessage(), e);

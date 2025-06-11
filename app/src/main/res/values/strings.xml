@@ -294,4 +294,23 @@
 
 
 
+    <!--news pages -->
+
+    <!-- Screen Title and Navigation -->
+    <string name="academic_news_title">Academic News</string>
+    <string name="back_button_desc">Go back to previous screen</string>
+
+    <!-- Search Bar -->
+    <string name="search_academic_news_hint">Search academic news</string>
+    <string name="search_icon_desc">Search icon</string>
+
+    <!-- News Content -->
+    <string name="news_image_desc">News article image</string>
+
+    <!-- Featured News -->
+    <string name="featured_academic_news_title">New Research Breakthrough in AI Technology</string>
+    <string name="featured_academic_news_desc">Scientists at the university have made significant advances in artificial intelligence research, opening new possibilities for machine learning applications across various academic disciplines.</string>
+
+    <string name="news_time_2_hours">2 hours ago</string>
+
 </resources>
