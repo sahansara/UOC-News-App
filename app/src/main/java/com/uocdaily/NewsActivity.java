@@ -436,7 +436,7 @@ public class NewsActivity extends AppCompatActivity {
             // TODO: Uncomment when ProfileActivity is created
              Intent intent = new Intent(this, ProfileActivity.class);
              startActivity(intent);
-            showInfoToast("Profile screen - To be implemented");
+            showInfoToast(" move to Profile screen ..");
         } catch (Exception e) {
             Log.e(TAG, "Error navigating to profile: " + e.getMessage(), e);
             showErrorToast("Cannot open profile");
@@ -497,7 +497,7 @@ public class NewsActivity extends AppCompatActivity {
             // TODO: Uncomment when DeveloperInfoActivity is created
              Intent intent = new Intent(this, Devloper_info_activity.class);
              startActivity(intent);
-            showInfoToast("Developer info screen - To be implemented");
+            showInfoToast("move Developer screen.. ");
         } catch (Exception e) {
             Log.e(TAG, "Error navigating to dev info: " + e.getMessage(), e);
             showErrorToast("Cannot open developer info");

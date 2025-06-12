@@ -66,18 +66,18 @@
         <TextView
             android:id="@+id/textSignUp"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginLeft="-16dp"
-            android:layout_marginRight="-16dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="-24dp"
+            android:layout_marginRight="-24dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/login_register_back"
             android:clickable="true"
             android:focusable="true"
+            android:gravity="center"
             android:text="@string/signup_prompt"
             android:textColor="#FFF"
-            android:textSize="16sp"
-            android:gravity="center"
-            />
+            android:textSize="16sp" />
+
         <Button
             android:id="@+id/buttonLogin"
             android:layout_width="160dp"
