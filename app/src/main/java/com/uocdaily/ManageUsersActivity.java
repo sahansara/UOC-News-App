@@ -193,7 +193,7 @@ public class ManageUsersActivity extends AppCompatActivity {
 
         usersRef.addValueEventListener(usersListener);
     }
-
+//for search users
     private void filterUsers(String query) {
         filteredUsersList.clear();
 

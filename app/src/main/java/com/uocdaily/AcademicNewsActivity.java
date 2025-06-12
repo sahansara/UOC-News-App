@@ -72,8 +72,7 @@ public class AcademicNewsActivity extends AppCompatActivity {
         // Get the ScrollView's LinearLayout container
         newsContainer = findViewById(R.id.news_container);
         if (newsContainer == null) {
-            // If news_container doesn't exist, we'll create news cards dynamically
-            // This will be handled in the displayNews method
+
         }
 
         // Initialize lists
@@ -317,8 +316,7 @@ public class AcademicNewsActivity extends AppCompatActivity {
         // Show a message when no news is available
         Toast.makeText(this, "No academic news available at the moment", Toast.LENGTH_SHORT).show();
 
-        // You can also add a TextView to show "No news available" message
-        // in your layout and make it visible here
+
     }
 
     @Override
