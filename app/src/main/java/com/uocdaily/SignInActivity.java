@@ -34,7 +34,7 @@ public class SignInActivity extends AppCompatActivity {
         // Initialize Firebase Auth with debug logging
         mAuth = FirebaseAuth.getInstance();
 
-        // Debug: Check Firebase connection
+        // for degug Check Firebase connection
         Log.d(TAG, "Firebase Auth instance: " + (mAuth != null ? "OK" : "NULL"));
         Log.d(TAG, "Current user: " + (mAuth.getCurrentUser() != null ? mAuth.getCurrentUser().getEmail() : "None"));
 
@@ -52,8 +52,8 @@ public class SignInActivity extends AppCompatActivity {
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null) {
             Log.d(TAG, "User already signed in: " + currentUser.getEmail());
-            // User is already signed in, navigate to main activity
-//            navigateNewsActivity();
+
+            navigateNewsActivity();
         } else {
             Log.d(TAG, "No user currently signed in");
         }
@@ -214,10 +214,10 @@ public class SignInActivity extends AppCompatActivity {
     /**
      * Navigate to main activity after successful login
      */
-    // OLD METHOD - REPLACE COMPLETELY:
+
     private void navigateNewsActivity() {
         try {
-            // Get current user
+
             FirebaseUser currentUser = mAuth.getCurrentUser();
             if (currentUser == null) {
                 showErrorToast("User authentication failed");

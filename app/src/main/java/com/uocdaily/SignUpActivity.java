@@ -40,7 +40,7 @@ public class SignUpActivity extends AppCompatActivity {
             setContentView(R.layout.activity_sign_up);
             Log.d(TAG, "Layout set successfully");
 
-            // Initialize Firebase Auth and Database
+            // Initialize Firebase Authincations  and Database
             mAuth = FirebaseAuth.getInstance();
             mDatabase = FirebaseDatabase.getInstance().getReference();
             Log.d(TAG, "Firebase initialized successfully");
@@ -51,7 +51,7 @@ public class SignUpActivity extends AppCompatActivity {
             // Set click listeners
             setClickListeners();
 
-            // Handle back press using the new API
+
             getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
                 @Override
                 public void handleOnBackPressed() {
@@ -91,7 +91,7 @@ public class SignUpActivity extends AppCompatActivity {
 
     private void setClickListeners() {
         try {
-            // Sign Up Button Click - Using lambda expression
+            // Sign Up Button Click then Using lambda expression
             btnSignUp.setOnClickListener(v -> {
                 Log.d(TAG, "Sign up button clicked");
                 signUpUser();
@@ -114,6 +114,7 @@ public class SignUpActivity extends AppCompatActivity {
 
     private void signUpUser() {
         try {
+            // for only degub purpos
             Log.d(TAG, "Starting user sign up process");
 
             // Get input values
@@ -189,12 +190,13 @@ public class SignUpActivity extends AppCompatActivity {
             Toast.makeText(this, "Error during sign up: " + e.getMessage(), Toast.LENGTH_LONG).show();
         }
     }
-
+    // data insert part in db
     private void saveUserToDatabase(String userId, String username, String email) {
         try {
+            //for degus only
             Log.d(TAG, "Saving user to database: " + userId);
 
-            // Create user data HashMap
+            // Create user data use  HashMap
             HashMap<String, Object> userData = new HashMap<>();
             userData.put("username", username);
             userData.put("email", email);

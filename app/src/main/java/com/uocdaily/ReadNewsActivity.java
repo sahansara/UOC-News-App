@@ -111,7 +111,7 @@ public class ReadNewsActivity extends AppCompatActivity {
         // Return different placeholder images for different categories
         switch (category.toLowerCase()) {
             case "sport":
-                return R.drawable.ic_sports; // You need to add this drawable
+                return R.drawable.ic_sports; // You need to add this drawable just image
             case "academic":
                 return R.drawable.ic_school; // You already have this
             case "event":

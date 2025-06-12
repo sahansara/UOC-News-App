@@ -105,7 +105,7 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
     }
-
+    // data get form firbase
     private void loadUserData() {
         if (currentUser != null) {
             // Get email from Firebase Auth
@@ -177,7 +177,7 @@ public class ProfileActivity extends AppCompatActivity {
         btnSignOut.setEnabled(false);
         btnSignOut.setText("Signing out...");
 
-        // Sign out from Firebase
+        // Sign out from Firebase auth firbase
         mAuth.signOut();
 
         // Show success message

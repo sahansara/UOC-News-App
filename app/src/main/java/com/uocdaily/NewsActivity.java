@@ -28,7 +28,7 @@ public class NewsActivity extends AppCompatActivity {
     private ImageView profileIcon;
     private ImageView appLogo;
 
-    // Navigation components
+    // Navigation components i used
     private LinearLayout navHome, navAcademic, navEvents, navSports, navDevInfo;
 
     // News card UI elements
@@ -37,7 +37,7 @@ public class NewsActivity extends AppCompatActivity {
     private TextView eventsNewsTitle, eventsNewsDescription, eventsNewsLastUpdate;
     private TextView sportsNewsTitle, sportsNewsDescription, sportsNewsLastUpdate;
 
-    // Firebase Database reference
+    // Firebase Database reference(for get data)
     private DatabaseReference databaseReference;
     private ValueEventListener newsListener;
 
@@ -86,7 +86,7 @@ public class NewsActivity extends AppCompatActivity {
      */
     private void initializeViews() {
         try {
-            // Top bar components
+            // Top bar components i use
             profileIcon = findViewById(R.id.profileIcon);
             appLogo = findViewById(R.id.appLogo);
 
@@ -339,7 +339,7 @@ public class NewsActivity extends AppCompatActivity {
                         if (academicNewsImage != null && imageUrl != null && !imageUrl.isEmpty()) {
                             Glide.with(this)
                                     .load(imageUrl)
-                                    .placeholder(R.drawable.ic_launcher_background) // Default placeholder
+                                    .placeholder(R.drawable.ic_launcher_background) // Default placeholder just image
                                     .error(R.drawable.ic_launcher_background) // Error placeholder
                                     .into(academicNewsImage);
                         }
@@ -549,7 +549,7 @@ public class NewsActivity extends AppCompatActivity {
             Log.e(TAG, "Error in onDestroy: " + e.getMessage(), e);
         }
     }
-
+// i use activity life cylcles on my app
     @Override
     protected void onResume() {
         super.onResume();
