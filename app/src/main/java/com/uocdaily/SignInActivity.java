@@ -53,7 +53,7 @@ public class SignInActivity extends AppCompatActivity {
         if (currentUser != null) {
             Log.d(TAG, "User already signed in: " + currentUser.getEmail());
 
-            navigateNewsActivity();
+           // navigateNewsActivity();
         } else {
             Log.d(TAG, "No user currently signed in");
         }
